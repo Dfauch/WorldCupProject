@@ -10,10 +10,10 @@ renamed as (
 
     select
         player_id,
-        date,
+        date as date_date,
         market_value_in_eur,
         current_club_id,
-        player_club_domestic_competition_id
+        player_club_domestic_competition_id,
 
     from source
 
