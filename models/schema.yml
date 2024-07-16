@@ -1,0 +1,93 @@
+version: 2
+
+sources:
+  - name: raw_dataset #The name you want to give to the dataset
+    schema: raw_dataset #schema is the name of the dataset in BigQuery
+    description: Temps de jeu des joueurs
+    tables:
+      - name: appearances #name you want to give the table
+        identifier: appearances #identifier is the name of the table in BigQuery
+        columns:
+          - name: appearance_id
+          - name: game_id
+          - name: player_id
+          - name: player_club_id
+          - name: player_current_club_id
+          - name: date
+          - name : player_name
+          - name : competition_id
+          - name : yellow_cards
+          - name : red_cards
+          - name : goals
+          - name : assists
+          - name : minutes_played
+      - name: clubs #name you want to give the table
+        identifier: clubs #identifier is the name of the table in BigQuery
+        columns:
+          - name: club_id
+          - name: club_code
+          - name: name
+          - name: domestic_competition_id
+          - name: total_market_value
+          - name: squad_size
+          - name : average_age
+          - name : foreigners_number
+          - name : foreigners_percentage
+          - name : national_team_players
+          - name : stadium_name
+          - name : stadium_seats
+          - name : net_transfer_record
+          - name : coach_name
+          - name : last_season
+          - name : filename
+          - name : url
+      - name: player_valuations #name you want to give the table
+        identifier: player_valuations #identifier is the name of the table in BigQuery
+        columns:
+          - name: fullname
+          - name: player_id
+          - name: date
+          - name: market_value_in_eur
+          - name: current_club_id
+          - name: player_club_domestic_competition_id
+      - name: players #name you want to give the table
+        identifier: players #identifier is the name of the table in BigQuery
+        columns:
+          - name: fullname
+          - name: player_id
+          - name: first_name
+          - name: last_name
+          - name: name
+          - name: last_season
+          - name: current_club_id
+          - name: player_code
+          - name: country_of_birth
+          - name: city_of_birth
+          - name: country_of_citizenship
+          - name: date_of_birth
+          - name: sub_position
+          - name: foot
+          - name: height_in_cm
+          - name: contract_expiration_date
+          - name: agent_name
+          - name: image_url
+          - name: url
+          - name: current_club_domestic_competition_id
+          - name: current_club_name
+          - name: market_value_in_eur
+          - name: highest_market_value_in_eur
+      - name: world_cup_data #name you want to give the table
+        identifier: world_cup_data #identifier is the name of the table in BigQuery
+        columns:
+          - name: date_date
+          - name: position
+          - name: team
+          - name: games_played
+          - name: win
+          - name: draw
+          - name: loss
+          - name: goals_for
+          - name: goals_again
+          - name: goal_difference
+          - name: points
+
