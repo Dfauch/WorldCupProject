@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('raw_dataset', 'world_cup_data') }}
+    select * from {{ source('raw_dataset', 'combined_world_cup_data') }}
 
 ),
 
@@ -12,6 +12,7 @@ renamed as (
         date_date,
         position,
         team,
+        country_id,
         games_played,
         win,
         draw,

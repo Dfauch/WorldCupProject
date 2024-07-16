@@ -76,12 +76,13 @@ sources:
           - name: current_club_name
           - name: market_value_in_eur
           - name: highest_market_value_in_eur
-      - name: world_cup_data #name you want to give the table
-        identifier: world_cup_data #identifier is the name of the table in BigQuery
+      - name: combined_world_cup_data #name you want to give the table
+        identifier: combined_world_cup_data #identifier is the name of the table in BigQuery
         columns:
           - name: date_date
           - name: position
           - name: team
+          - name: country_id
           - name: games_played
           - name: win
           - name: draw
@@ -90,4 +91,17 @@ sources:
           - name: goals_again
           - name: goal_difference
           - name: points
-
+      - name: wiki_scrapp_country_cdm #name you want to give the table
+        identifier: wiki_scrapp_country_cdm #identifier is the name of the table in BigQuery
+        columns:
+          - name: name
+          - name: poste
+          - name: pays_fr
+          - name: pays_en
+          - name: an
+          - name: win
+          - name: Jour
+          - name: Mois
+          - name: Annee
+          - name: Age
+          - name: country_id
