@@ -22,7 +22,6 @@ renamed as (
         goals,
         assists,
         minutes_played
-
     from source
 
 )
