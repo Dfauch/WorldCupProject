@@ -105,3 +105,18 @@ sources:
           - name: Annee
           - name: Age
           - name: country_id
+      - name: competitions #name you want to give the table
+        identifier: competitions #identifier is the name of the table in BigQuery
+        columns:
+          - name: competition_id
+          - name: competition_code
+          - name: name
+          - name: sub_type
+          - name: type
+          - name: country_id
+          - name: country_name
+          - name: domestic_league_code
+          - name: confederation
+          - name: url
+          - name: is_major_national_league
+
