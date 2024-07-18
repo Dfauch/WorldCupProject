@@ -5,8 +5,8 @@ name,
 #last_name,
 player_code,
 CASE 
-WHEN country_of_citizenship = 'Türkiye' THEN 'Turkey'
-ELSE country_of_citizenship
+WHEN country_of_citizenship = 'Türkiye' THEN 'turkey'
+ELSE LOWER(country_of_citizenship)
 END AS country_of_citizenship,
 date_of_birth,
 CASE
