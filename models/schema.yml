@@ -139,3 +139,65 @@ sources:
           - name: Poids_kg
           - name: Poids_lbs
           - name: Player_id
+      - name: world_cup_2022_consolide # Add your new table here
+        identifier: world_cup_2022_consolide # The identifier is the name of the table in BigQuery
+        columns:
+          - name: annee
+          - name: position_finale
+          - name: ranking
+          - name: team
+          - name: left_side
+          - name: middle_of_the_pitch
+          - name: right_side
+          - name: cross_pg
+          - name: through_ball_pg
+          - name: long_balls_pg
+          - name: short_passes_pg
+          - name: open_play
+          - name: counter_attack
+          - name: set_piece
+          - name: penalty
+          - name: own_goal
+          - name: goals
+          - name: shots_pg
+          - name: discipline
+          - name: possession
+          - name: pass
+          - name: aerials_won
+          - name: rating
+          - name: shots_pg_def
+          - name: tackles_pg
+          - name: interceptions_pg
+          - name: fouls_pg
+          - name: offsides_pg
+      - name: world_cup_2018_consolide # Add your new table here
+        identifier: world_cup_2018_consolide # The identifier is the name of the table in BigQuery
+        columns:
+          - name: annee
+          - name: position_finale
+          - name: ranking
+          - name: team
+          - name: left_side
+          - name: middle_of_the_pitch
+          - name: right_side
+          - name: cross_pg
+          - name: through_ball_pg
+          - name: long_balls_pg
+          - name: short_passes_pg
+          - name: open_play
+          - name: counter_attack
+          - name: set_piece
+          - name: penalty
+          - name: own_goal
+          - name: goals
+          - name: shots_pg
+          - name: discipline
+          - name: possession
+          - name: pass
+          - name: aerials_won
+          - name: rating
+          - name: shots_pg_def
+          - name: tackles_pg
+          - name: interceptions_pg
+          - name: fouls_pg
+          - name: offsides_pg
