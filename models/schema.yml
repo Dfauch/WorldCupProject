@@ -119,4 +119,23 @@ sources:
           - name: confederation
           - name: url
           - name: is_major_national_league
-
+      - name: sofifa_clean #name you want to give the table
+        identifier: sofifa_clean #identifier is the name of the table in BigQuery
+        columns:
+          - name: Club_nat
+          - name: Nom
+          - name: Age
+          - name: Position
+          - name: Note
+          - name: Potential
+          - name: Team
+          - name: Prefered_pos
+          - name: Value
+          - name: Salaire
+          - name: Total_Point
+          - name: Prenom
+          - name: Taille_fr
+          - name: Taille_en
+          - name: Poids_kg
+          - name: Poids_lbs
+          - name: Player_id
