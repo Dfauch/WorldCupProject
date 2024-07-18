@@ -1,19 +1,15 @@
 SELECT
-    date_team,
-    year,
-    country,
-    count_A,
-    count_M,
-    count_D,
-    count_G,
-    total_players,
-    percentage_A,
-    percentage_M,
-    percentage_D,
-    percentage_G,
+    calculations.date_team,
+    calculations.year,
+    calculations.country,
+    calculations.adjusted_A,
+    calculations.adjusted_D,
+    calculations.count_G,
+    calculations.total_players,
+    position_country.position,
     CASE
-        WHEN percentage_A > 0.4 THEN 'Offensive'
-        WHEN percentage_D > 0.4 THEN 'Defensive'
+        WHEN calculations.adjusted_A > 9 THEN 'Offensive'
+        WHEN calculations.adjusted_D > 11 THEN 'Defensive'
         ELSE 'Equilibree'
     END AS categorie
 FROM (
@@ -25,13 +21,15 @@ FROM (
         count_M,
         count_D,
         count_G,
-        (count_A + count_M + count_D) AS total_players,
-        count_A / (count_A + count_M + count_D) AS percentage_A,
-        count_M / (count_A + count_M + count_D) AS percentage_M,
-        count_D / (count_A + count_M + count_D) AS percentage_D,
-        count_G / (count_A + count_M + count_D) AS percentage_G
+        (count_A + count_M + count_D + count_G) AS total_players,
+        count_A + (count_M / 2) AS adjusted_A,
+        count_D + (count_M / 2) AS adjusted_D
     FROM
         `theworldcupproject.raw_dataset.country_position_count`
 ) AS calculations
+LEFT JOIN
+    `theworldcupproject.raw_dataset.position_country` AS position_country
+ON
+    calculations.date_team = position_country.date_team
 ORDER BY
-    year, country
+    calculations.year, calculations.country
