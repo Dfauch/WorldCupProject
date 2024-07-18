@@ -20,4 +20,4 @@ SELECT
     ccyp.count_G
 FROM {{ ref('joined_combined_scrapp') }} AS jcs
 LEFT JOIN {{ ref('count_country_year_position_V2') }} AS ccyp
-ON CONCAT(jcs.an, '-', jcs.country_id) = ccyp.date_team;
+ON CONCAT(jcs.an, '-', jcs.country_id) = ccyp.date_team
