@@ -1,14 +1,15 @@
 SELECT
-    date_team,
-    year,
-    country,
-    adjusted_A,
-    adjusted_D,
-    count_G,
-    total_players,
+    calculations.date_team,
+    calculations.year,
+    calculations.country,
+    calculations.adjusted_A,
+    calculations.adjusted_D,
+    calculations.count_G,
+    calculations.total_players,
+    position_country.position,
     CASE
-        WHEN adjusted_A > 9 THEN 'Offensive'
-        WHEN adjusted_D > 11 THEN 'Defensive'
+        WHEN calculations.adjusted_A > 9 THEN 'Offensive'
+        WHEN calculations.adjusted_D > 11 THEN 'Defensive'
         ELSE 'Equilibree'
     END AS categorie
 FROM (
@@ -26,5 +27,9 @@ FROM (
     FROM
         `theworldcupproject.raw_dataset.country_position_count`
 ) AS calculations
+LEFT JOIN
+    `theworldcupproject.raw_dataset.position_country` AS position_country
+ON
+    calculations.date_team = position_country.date_team
 ORDER BY
-    year, country
+    calculations.year, calculations.country
