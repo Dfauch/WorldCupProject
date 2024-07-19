@@ -36,7 +36,8 @@ renamed as (
         tackles_pg,
         interceptions_pg,
         fouls_pg,
-        offsides_pg
+        offsides_pg,
+        games_played
 
     from source
 
