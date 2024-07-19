@@ -31,6 +31,8 @@ renamed_2018 as (
         tackles_pg,
         interceptions_pg,
         fouls_pg,
+        offsides_pg,
+        games_played
     from source_2018
 ),
 
@@ -67,7 +69,8 @@ renamed_2022 as (
         tackles_pg,
         interceptions_pg,
         fouls_pg,
-        offsides_pg
+        offsides_pg,
+        games_played
     from source_2022
 )
 
