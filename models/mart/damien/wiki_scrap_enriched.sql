@@ -7,7 +7,7 @@ with sofifa_enriched as (
     cast(round(avg(note),2) as float64) as avg_note,
     cast(round(avg(total_point),2) as float64) as avg_total_point,
     cast(round(avg(taille_in_cm),2) as float64) as avg_taille
-    from {{ref('join_wiki_scrap_sofifa')}} as sofifa
+    from {{ref('stg_raw_dataset__join_wiki_scrap_sofifa')}} as sofifa
     GROUP by date_team
 
 ),
