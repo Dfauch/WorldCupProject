@@ -170,6 +170,7 @@ sources:
           - name: interceptions_pg
           - name: fouls_pg
           - name: offsides_pg
+          - name: games_played
       - name: world_cup_2018_consolide # Add your new table here
         identifier: world_cup_2018_consolide # The identifier is the name of the table in BigQuery
         columns:
@@ -201,3 +202,4 @@ sources:
           - name: interceptions_pg
           - name: fouls_pg
           - name: offsides_pg
+          - name: games_played
