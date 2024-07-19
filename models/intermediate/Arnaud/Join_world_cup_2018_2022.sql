@@ -32,7 +32,8 @@ renamed_2018 as (
         interceptions_pg,
         fouls_pg,
         offsides_pg,
-        games_played
+        games_played,
+        ROUND(SAFE_DIVIDE(goals, games_played), 2) AS goals_pg
     from source_2018
 ),
 
@@ -70,7 +71,8 @@ renamed_2022 as (
         interceptions_pg,
         fouls_pg,
         offsides_pg,
-        games_played
+        games_played,
+        ROUND(SAFE_DIVIDE(goals, games_played), 2) AS goals_pg
     from source_2022
 )
 
