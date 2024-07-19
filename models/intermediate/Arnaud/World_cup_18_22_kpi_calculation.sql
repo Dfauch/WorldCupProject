@@ -34,7 +34,8 @@ grouped as (
         ROUND(avg(open_play + counter_attack + set_piece + penalty + own_goal), 2) as avg_total_goals,
         ROUND(avg(goals / shots_pg), 2) as avg_conversion_rate,
         ROUND(avg(possession / pass), 2) as avg_possession_efficiency,
-        ROUND(avg(tackles_pg + interceptions_pg + fouls_pg), 2) as avg_defensive_actions_pg
+        ROUND(avg(tackles_pg + interceptions_pg + fouls_pg), 2) as avg_defensive_actions_pg,
+        ROUND(AVG(games_played),2) AS games_played,
     from source
     group by annee, ranking
 )
