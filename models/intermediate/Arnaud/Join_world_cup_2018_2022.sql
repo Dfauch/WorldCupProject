@@ -31,7 +31,6 @@ renamed_2018 as (
         tackles_pg,
         interceptions_pg,
         fouls_pg,
-        offsides_pg
     from source_2018
 ),
 
