@@ -170,6 +170,7 @@ sources:
           - name: interceptions_pg
           - name: fouls_pg
           - name: offsides_pg
+          - name: games_played
       - name: world_cup_2018_consolide # Add your new table here
         identifier: world_cup_2018_consolide # The identifier is the name of the table in BigQuery
         columns:
@@ -201,3 +202,27 @@ sources:
           - name: interceptions_pg
           - name: fouls_pg
           - name: offsides_pg
+          - name: games_played
+      - name: join_wiki_scrap_sofifa # Add your new table here
+        identifier: join_wiki_scrap_sofifa # The identifier is the name of the table in BigQuery
+        columns:
+          - name: date_team
+          - name: name
+          - name: poste
+          - name: pays_fr
+          - name: pays_en
+          - name: an
+          - name: jour
+          - name: mois
+          - name: annee
+          - name: age
+          - name: country_id
+          - name: Player_id
+          - name: current_club_id
+          - name: market_value_in_eur
+          - name: foot
+          - name: potential
+          - name: note
+          - name: total_point
+          - name: poids_kg
+          - name: taille_in_cm
