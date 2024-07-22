@@ -6,7 +6,7 @@ with sofifa_enriched as (
     cast(round(avg(potential),2) as float64) as avg_potential,
     cast(round(avg(note),2) as float64) as avg_note,
     cast(round(avg(total_point),2) as float64) as avg_total_point,
-    cast(round(avg(taille_in_cm),2) as float64) as avg_taille
+    cast(round(avg(taille_in_cm),2) as float64) as avg_taille,
     from {{ref('stg_raw_dataset__join_wiki_scrap_sofifa')}} as sofifa
     GROUP by date_team
 
@@ -14,13 +14,14 @@ with sofifa_enriched as (
 sofifa_enriched_joined as (
     select
     sofifa_enriched.*,
-    avg_poste.* except (year_country_key, date_team),
+    avg_poste.* except (year_country_key, date_team, age_moyen),
     from sofifa_enriched
     left join {{ref('joined_avg_age_poste')}} as avg_poste
     on sofifa_enriched.date_team = avg_poste.date_team
 )
 
 Select
-    *,
+    * except(country_id),
+    cast(round(SAFE_DIVIDE(goals_for,games_played),2) as float64) as avg_goals_for_by_match,
+    cast(round(SAFE_DIVIDE(goals_again,games_played),2) as float64) as avg_goals_again_by_match,
 from sofifa_enriched_joined
-where an > 2014

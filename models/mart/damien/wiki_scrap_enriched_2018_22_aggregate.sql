@@ -1,0 +1,25 @@
+Select
+    ranking,
+    annee,
+    cast(round(avg(avg_age),2) as float64) as avg_age,
+    cast(round(avg(avg_market_value),2) as float64) as avg_market_value,
+    cast(round(avg(avg_note),2) as float64) as avg_note,
+    cast(round(avg(avg_total_point),2) as float64) as avg_total_point,
+    cast(round(avg(games_played),2) as float64) as games_played,
+    cast(round(avg(win),2) as float64) as win,
+    cast(round(avg(draw),2) as integer) as draw,
+    cast(round(avg(loss),2) as float64) as loss,
+    cast(round(avg(goals_for),2) as float64) as goals_for,
+    cast(round(avg(goals_again),2) as float64) as goals_again,
+    cast(round(avg(goal_difference),2) as float64) as goal_difference,
+    cast(round(avg(avg_goals_for_by_match),2) as float64) as avg_goals_for_by_match ,
+    cast(round(avg(avg_goals_again_by_match),2) as float64) as avg_goals_again_by_match,
+    cast(round(avg(win_rate),2) as float64) as avg_win_rate ,
+    cast(round(avg(penalty), 2) as float64) as avg_penalty,
+    cast(round(avg(own_goal), 2) as float64) as avg_own_goal,
+    cast(round(avg(goals), 2) as float64) as avg_goals,
+    cast(round(avg(shots_pg), 2) as float64) as avg_shots_pg,
+    cast(round(avg(discipline), 2) as float64) as avg_discipline,
+from {{ref('wiki_scrap_enriched_2018_22_stats')}}
+where annee > 2014 
+GROUP by ranking, annee
