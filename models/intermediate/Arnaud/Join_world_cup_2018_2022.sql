@@ -6,7 +6,7 @@ renamed_2018 as (
     select
         annee,
         position_finale,
-        ranking,
+        lower(ranking) as ranking,
         team,
         left_side,
         middle_of_the_pitch,
