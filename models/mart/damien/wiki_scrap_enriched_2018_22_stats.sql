@@ -25,3 +25,4 @@ Select
     from {{ref('wiki_scrap_enriched')}} as enriched
 left join world_cup_stats as world_stats
 on enriched.date_team = world_stats.country_id
+where an > 2014
