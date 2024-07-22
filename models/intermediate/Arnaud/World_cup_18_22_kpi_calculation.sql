@@ -22,9 +22,7 @@ grouped as (
         ROUND(avg(shots_pg), 2) as avg_shots_pg,
         ROUND(avg(discipline), 2) as avg_discipline,
         ROUND(avg(possession), 2) as avg_possession,
-        ROUND(avg(pass), 2) as avg_pass,
         ROUND(avg(aerials_won), 2) as avg_aerials_won,
-        ROUND(avg(rating), 2) as avg_rating,
         ROUND(avg(shots_pg_def), 2) as avg_shots_pg_def,
         ROUND(avg(tackles_pg), 2) as avg_tackles_pg,
         ROUND(avg(interceptions_pg), 2) as avg_interceptions_pg,
@@ -34,7 +32,7 @@ grouped as (
         ROUND(avg(open_play + counter_attack + set_piece + penalty + own_goal), 2) as avg_total_goals,
         ROUND(avg(goals / shots_pg), 2) as avg_conversion_rate,
         ROUND(avg(possession / pass), 2) as avg_possession_efficiency,
-        ROUND(avg(tackles_pg + interceptions_pg + fouls_pg), 2) as avg_defensive_actions_pg,
+        ROUND(AVG(tackles_pg + interceptions_pg), 2) AS avg_successful_defensive_actions_pg,
         ROUND(AVG(goals_pg),2) as goals_pg,
         
     from source
