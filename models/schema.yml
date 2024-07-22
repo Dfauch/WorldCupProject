@@ -226,3 +226,31 @@ sources:
           - name: total_point
           - name: poids_kg
           - name: taille_in_cm
+      - name: Caps_goals_CDM_2018_2022 # Add your new table here
+        identifier: Caps_goals_CDM_2018_2022 # The identifier is the name of the table in BigQuery
+        columns:
+          - name: date_team
+          - name: country_id
+          - name: an
+          - name: pays_fr
+          - name: pays_en
+          - name: an
+          - name: No_
+          - name: Pos_
+          - name: Player
+          - name: Date_of_birth__age_
+          - name: Caps
+          - name: Goals
+          - name: Club
+      - name: FIFA_ranking_CDM_18_22 # Add your new table here
+        identifier: FIFA_ranking_CDM_18_22 # The identifier is the name of the table in BigQuery
+        columns:
+          - name: date_team
+          - name: country_id
+          - name: an
+          - name: rank
+          - name: country_full
+          - name: rank_change
+          - name: confederation
+          - name: rank_date
+
