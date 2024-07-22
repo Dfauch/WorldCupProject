@@ -21,7 +21,7 @@ world_cup_stats_clean as (
     round(world_stats.pass, 2) as pass_pg,
     round(SAFE_DIVIDE(world_stats.open_play,enriched.games_played),2 ) as open_play_pg,
     round(SAFE_DIVIDE(world_stats.penalty,enriched.games_played),2 ) as penalty_pg,   
-    round(SAFE_DIVIDE(world_stats.own_goal,enriched.games_played),2 ) as own_goal_pg,   
+    round(SAFE_DIVIDE(world_stats.own_goal,enriched.games_played),2 ) as own_goal_pg,
     case
     when round(SAFE_DIVIDE(enriched.win, enriched.games_played)*100, 2) is null then 0
     else round(SAFE_DIVIDE(enriched.win, enriched.games_played)*100, 2)
@@ -36,7 +36,7 @@ select
     wdc.*,
     caps_goal.total_team_goals,
     caps_goal.total_team_caps,
-    caps_goal.ranked,
+    caps_goal.ranked as classement_fifa,
 from world_cup_stats_clean as wdc
 left join {{ref('Caps_goals_CDM_2018_2022_bycountryid')}} as caps_goal
 on wdc.date_team = caps_goal.date_team
