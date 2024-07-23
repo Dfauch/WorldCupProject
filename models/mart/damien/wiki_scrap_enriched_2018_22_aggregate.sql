@@ -29,7 +29,7 @@ Select
     cast(round(avg(possession), 2) as float64) as avg_possession,
     cast(round(avg(total_team_goals), 2) as float64) as avg_total_team_goals,
     cast(round(avg(total_team_caps), 2) as float64) as avg_total_team_caps,
-    cast(round(avg(ranked), 2) as float64) as avg_classement_fifa,
+    cast(round(avg(classement_fifa), 2) as float64) as avg_classement_fifa,
 from {{ref('wiki_scrap_enriched_2018_22_stats')}}
 where annee > 2014 
 GROUP by ranking, annee
